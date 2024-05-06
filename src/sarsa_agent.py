@@ -26,7 +26,7 @@ class SARSA_Agent:
             action = self.choose_action(state)
             done = False
             while not done:
-                next_state, reward, done = env.step(action)
+                next_state, reward, done = env.step(state, action)
                 next_action = self.choose_action(next_state)
                 self.update_q_table(state, action, reward, next_state, next_action)
                 state = next_state
