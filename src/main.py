@@ -1,13 +1,12 @@
 import pandas as pd
-from data_preprocessing import load_data, preprocess_data
+from data_preprocessing import taxi_data
 from state_action_spaces import StateActionSpace
 from sarsa_agent import SarsaAgent
 from rebalancing_logic import RebalancingLogic
 
 def main():
-    # Load and preprocess data
-    taxi_data = load_data()
-    preprocessed_data = preprocess_data(taxi_data)
+    # Preprocess data (no need to load data separately)
+    preprocessed_data = taxi_data
 
     # Define state and action spaces
     state_action_space = StateActionSpace(preprocessed_data)
