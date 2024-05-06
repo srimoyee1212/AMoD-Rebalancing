@@ -19,6 +19,18 @@ class SARSA_Agent:
         td_target = reward + self.discount_factor * self.q_table[next_state, next_action]
         td_error = td_target - self.q_table[state, action]
         self.q_table[state, action] += self.learning_rate * td_error
-    
+
+    def train(self, episodes, env):
+        for episode in range(episodes):
+            state = env.reset()
+            action = self.choose_action(state)
+            done = False
+            while not done:
+                next_state, reward, done = env.step(action)
+                next_action = self.choose_action(next_state)
+                self.update_q_table(state, action, reward, next_state, next_action)
+                state = next_state
+                action = next_action
+
     def get_q_table(self):
         return self.q_table
