@@ -1,4 +1,5 @@
 import pandas as pd
+from data_preprocessing import taxi_data
 from state_action_spaces import StateActionSpace
 from sarsa_agent import SARSA_Agent
 from rebalancing_logic import RebalancingLogic
@@ -8,8 +9,9 @@ def main():
     
     env = Environment()
 
-    
-    state_action_space = StateActionSpace()
+    preprocessed_data = taxi_data
+
+    state_action_space = StateActionSpace(preprocessed_data)
 
     
     state_dim = state_action_space.state_dim
