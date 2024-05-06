@@ -25,17 +25,17 @@ def main():
     exploration_exploitation_ratio = []
     convergence_check = []
 
-    episodes = 1000  # Define the number of episodes
+    episodes = 1000  
     for episode in range(episodes):
-        # Train SARSA agent for one episode
+        
         sarsa_agent.train(1, env)
 
-        # Calculate metrics
+      
         avg_reward_per_episode.append(sarsa_agent.get_avg_reward())
         exploration_exploitation_ratio.append(sarsa_agent.get_exploration_exploitation_ratio())
         convergence_check.append(sarsa_agent.check_convergence())
 
-    # Print metrics
+
     print("Average Reward per Episode:", avg_reward_per_episode)
     print("Exploration vs. Exploitation Ratio:", exploration_exploitation_ratio)
     print("Convergence Check:", convergence_check)
