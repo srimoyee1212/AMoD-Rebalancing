@@ -1,29 +1,32 @@
 import numpy as np
-from data_preprocessing import taxi_data
 
-# Define the number of stations
-num_stations = len(taxi_data["PULocationID"].unique())
+class StateActionSpace:
+    def __init__(self, taxi_data):
+        self.taxi_data = taxi_data
 
-# Define the maximum number of vehicles
-max_vehicles = 100  # Adjust as needed based on your dataset
+        # Define the number of stations
+        self.num_stations = len(taxi_data["PULocationID"].unique())
 
-# Define the state space dimension
-state_dim = 2 * num_stations
+        # Define the maximum number of vehicles
+        self.max_vehicles = 100  # Adjust as needed based on your dataset
 
-# Define the action space dimension
-action_dim = num_stations
+        # Define the state space dimension
+        self.state_dim = 2 * self.num_stations
 
-# Define the maximum number of actions per vehicle
-max_actions_per_vehicle = 1  # Adjust as needed based on your requirements
+        # Define the action space dimension
+        self.action_dim = self.num_stations
 
-# Define the state space bounds
-state_bounds = np.array([[0, max_vehicles]] * num_stations)
+        # Define the maximum number of actions per vehicle
+        self.max_actions_per_vehicle = 1  # Adjust as needed based on your requirements
 
-# Define the action space bounds
-action_bounds = np.array([[0, 1]] * num_stations)  # Binary action space (stay or move)
+        # Define the state space bounds
+        self.state_bounds = np.array([[0, self.max_vehicles]] * self.num_stations)
 
-# Print information about the state and action spaces
-print("State space dimension:", state_dim)
-print("Action space dimension:", action_dim)
-print("State space bounds:", state_bounds)
-print("Action space bounds:", action_bounds)
+        # Define the action space bounds
+        self.action_bounds = np.array([[0, 1]] * self.num_stations)  # Binary action space (stay or move)
+
+        # Print information about the state and action spaces
+        print("State space dimension:", self.state_dim)
+        print("Action space dimension:", self.action_dim)
+        print("State space bounds:", self.state_bounds)
+        print("Action space bounds:", self.action_bounds)
