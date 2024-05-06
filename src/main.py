@@ -1,7 +1,7 @@
 import pandas as pd
 from data_preprocessing import taxi_data
 from state_action_spaces import StateActionSpace
-from sarsa_agent import SarsaAgent
+from sarsa_agent import SARSA_Agent
 from rebalancing_logic import RebalancingLogic
 
 def main():
@@ -12,7 +12,7 @@ def main():
     state_action_space = StateActionSpace(preprocessed_data)
 
     # Initialize SARSA agent
-    sarsa_agent = SarsaAgent(state_action_space)
+    sarsa_agent = SARSA_Agent(state_action_space)
 
     # Train SARSA agent
     sarsa_agent.train()
