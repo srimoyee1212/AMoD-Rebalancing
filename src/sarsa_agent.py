@@ -12,6 +12,7 @@ class SARSA_Agent:
         self.total_exploration = 0  # To count number of times exploration is chosen
         self.total_exploitation = 0  # To count number of times exploitation is chosen
         self.episode_steps = 0  # To calculate total steps per episode
+        self.rewards_history = []  # To store rewards history
 
     def choose_action(self, state):
         if np.random.uniform(0, 1) < self.epsilon:
@@ -41,6 +42,7 @@ class SARSA_Agent:
                 action = next_action
                 self.total_reward += reward
                 self.episode_steps += 1
+            self.rewards_history.append(self.total_reward)  # Update rewards history
 
     def get_q_table(self):
         return self.q_table
@@ -53,11 +55,11 @@ class SARSA_Agent:
         return self.total_exploration / total_choices if total_choices > 0 else 0
 
     def check_convergence(self, threshold=0.01, window_size=10):
-    # Check if the change in Q-values is below a threshold for a certain window size
+        # Check if the change in average rewards is below a threshold for a certain window size
         if len(self.rewards_history) >= window_size:
             recent_rewards = self.rewards_history[-window_size:]
             average_reward = sum(recent_rewards) / window_size
-            if abs(average_reward - self.last_average_reward) < threshold:
+            if abs(average_reward - self.rewards_history[-2]) < threshold:
                 print("Converged!")
                 return True
         return False
