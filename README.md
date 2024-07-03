@@ -1,9 +1,10 @@
 # AMoD-Rebalancing
 Reinforcement Learning approach for rebalancing Autonomous Mobility-on-Demand (AMoD) systems
 
-# Taxi Fleet Management Reinforcement Learning Project
-
 This project implements a reinforcement learning approach to optimize taxi fleet management using SARSA (State-Action-Reward-State-Action) algorithm. The goal is to intelligently rebalance taxis across stations based on historical trip data from New York City.
+
+![image](https://github.com/srimoyee1212/AMoD-Rebalancing/assets/30791239/e75d1b0b-a81b-48ab-80b5-ccde927bfce0)
+
 
 ## Table of Contents
 
