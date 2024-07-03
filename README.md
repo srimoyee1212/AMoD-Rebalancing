@@ -25,39 +25,43 @@ Dive into the rich dataset of New York City's yellow taxis, a treasure trove for
 
 Column Descriptions
 
-VendorID: Identifier for the TPEP provider supplying the record.
-1 = Creative Mobile Technologies, LLC
-2 = VeriFone Inc.
-tpep_pickup_datetime: The date and time when the meter was activated.
-tpep_dropoff_datetime: The date and time when the meter was turned off.
-Passenger_count: The number of passengers in the vehicle, as entered by the driver.
-Trip_distance: The distance of the trip in miles, as recorded by the taximeter.
-PULocationID: TLC Taxi Zone where the meter was engaged.
-DOLocationID: TLC Taxi Zone where the meter was disengaged.
-RateCodeID: The applicable rate code at the end of the trip.
-1 = Standard rate
-2 = JFK
-3 = Newark
-4 = Nassau or Westchester
-5 = Negotiated fare
-6 = Group ride
-Store_and_fwd_flag: Indicates if the trip record was stored in the vehicle's memory before transmission to the vendor due to lack of server connection.
-Y = Store and forward trip
-N = Not a store and forward trip
-Payment_type: How the passenger paid for the trip, represented by a numeric code.
-1 = Credit card
-2 = Cash
-3 = No charge
-4 = Dispute
-5 = Unknown
-6 = Voided trip
-Fare_amount: The fare as calculated by the meter based on time and distance.
-Extra: Additional charges, currently including only the $0.50 and $1 rush hour and overnight charges.
-MTA_tax: A $0.50 tax automatically added based on the metered rate.
-Improvement_surcharge: A $0.30 surcharge added at the start of the trip, implemented since 2015.
-Tip_amount: Credit card tip amounts. (Note: Cash tips are not recorded here.)
-Tolls_amount: Total tolls paid during the trip.
-Total_amount: The total charge to passengers, excluding cash tips.
+- VendorID: Identifier for the TPEP provider supplying the record.
+   - 1 = Creative Mobile Technologies, LLC
+   - 2 = VeriFone Inc.
+- tpep_pickup_datetime: The date and time when the meter was activated.
+- tpep_dropoff_datetime: The date and time when the meter was turned off.
+- Passenger_count: The number of passengers in the vehicle, as entered by the driver.
+- Trip_distance: The distance of the trip in miles, as recorded by the taximeter.
+- PULocationID: TLC Taxi Zone where the meter was engaged.
+- DOLocationID: TLC Taxi Zone where the meter was disengaged.
+- RateCodeID: The applicable rate code at the end of the trip.
+   - 1 = Standard rate
+   - 2 = JFK
+   - 3 = Newark
+   - 4 = Nassau or Westchester
+   - 5 = Negotiated fare
+   - 6 = Group ride
+- Store_and_fwd_flag: Indicates if the trip record was stored in the vehicle's memory before transmission to the vendor due to lack of server connection.
+   - Y = Store and forward trip
+   - N = Not a store and forward trip
+- Payment_type: How the passenger paid for the trip, represented by a numeric code.
+   - 1 = Credit card
+   - 2 = Cash
+   - 3 = No charge
+   - 4 = Dispute
+   - 5 = Unknown
+   - 6 = Voided trip
+- Fare_amount: The fare as calculated by the meter based on time and distance.
+- Extra: Additional charges, currently including only the $0.50 and $1 rush hour and overnight charges.
+- MTA_tax: A $0.50 tax automatically added based on the metered rate.
+- Improvement_surcharge: A $0.30 surcharge added at the start of the trip, implemented since 2015.
+- Tip_amount: Credit card tip amounts. (Note: Cash tips are not recorded here.)
+- Tolls_amount: Total tolls paid during the trip.
+- Total_amount: The total charge to passengers, excluding cash tips.
+
+Source:
+[Kaggle New York Taxi Trip Dataset](https://www.kaggle.com/datasets/microize/newyork-yellow-taxi-trip-data-2020-2019)
+[NYC TLC Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
 
 ## Files Included
 
